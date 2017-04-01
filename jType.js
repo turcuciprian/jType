@@ -5,11 +5,18 @@ var timerx;
 
 function jType(mainArray, args) {
     args = (typeof args === []) ? [] : args;
+if (gItemID===0){
+  mainArray.forEach(function(para){
+    jQuery(para).css("display", "none");
+  });
+}
+
     mainArray = (typeof mainArray === undefined) ? globalMainArr : mainArray;
     console.log(mainArray[gItemID]);
     globalMainArr = mainArray;
         globalItem = mainArray[gItemID];
         var tagA = jQuery(globalItem);
+        tagA.css("display", "list-item");
         var tagAStr = '';
         var tagAArr = [];
         if (tagA[0]) {
